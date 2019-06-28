@@ -15,10 +15,6 @@ import com.google.ar.sceneform.ux.TransformableNode
 import kotlinx.android.synthetic.main.activity_main.*
 
 
-
-
-
-
 @Suppress("SpellCheckingInspection")
 
 class MainActivity : AppCompatActivity() {
@@ -36,6 +32,7 @@ class MainActivity : AppCompatActivity() {
 
         // Adds a listener to the ARSceneView
         // Called before processing each frame
+
         arFragment.arSceneView.scene.addOnUpdateListener { frameTime ->
             arFragment.onUpdate(frameTime)
             onUpdate()
@@ -44,6 +41,8 @@ class MainActivity : AppCompatActivity() {
         // Set the onclick lister for our button
         // Change this string to point to the .sfb file of your choice :)
         floatingActionButton.setOnClickListener { addObject(Uri.parse("earth.sfb")) }
+
+        // Скрыть кнопку
         showFab(false)
 
     }
@@ -143,7 +142,7 @@ class MainActivity : AppCompatActivity() {
                 addNodeToScene(fragment, anchor, it)
             }
             .exceptionally {
-                Toast.makeText(this@MainActivity, "Error", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@MainActivity, "Unexpected error", Toast.LENGTH_SHORT).show()
                 return@exceptionally null
             }
     }
