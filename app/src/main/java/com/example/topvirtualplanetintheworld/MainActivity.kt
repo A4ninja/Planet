@@ -43,6 +43,7 @@ class MainActivity : AppCompatActivity() {
         floatingActionButton.setOnClickListener { addObject(Uri.parse("earth.sfb")) }
 
         // Скрыть кнопку
+        // one more
         showFab(false)
 
     }
