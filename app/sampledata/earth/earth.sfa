@@ -218,7 +218,7 @@
     file: 'sampledata/earth/earth.obj',
     name: 'earth',
     recenter: 'root',
-    scale: 0.242416999999999999,
+    scale: 0.09,
   },
   version: '0.54:2',
 }
